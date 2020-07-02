@@ -6,7 +6,7 @@
 <div class="container">
     <div class="text-center">
         <h2>Requested page does not exist.</h2>
-        <a href="/?action=home" class="btn btn-primary">Back to home</a>
+        <a href="/messagerie/?action=home" class="btn btn-primary">Back to home</a>
     </div>
 </div>
 
