@@ -8,15 +8,41 @@
 */
 function get_page(string $page_name = "") : string
 {
-    return($GLOBALS['view'] . $page_name);
+    return $GLOBALS['view'] . $page_name;
+}
+
+
+
+function login()
+{
+    require get_page('auth/login.php');
+}
+
+function logout()
+{
+    require get_page('auth/logout.php');
+}
+
+function register()
+{
+    require get_page('auth/register.php');
+}
+
+
+
+function admin()
+{
+    require get_page('admin.php');
 }
 
 function home()
 {
-    require (get_page('home.php'));
+    require get_page('home.php');
 }
+
+
 
 function error_404()
 {
-    require (get_page('errors/404.php'));
+    require get_page('errors/404.php');
 }

@@ -14,6 +14,8 @@
     <!-- CSS -->
     <link href="static/css/bootstrap.css" type="text/css" rel="stylesheet" media="screen, projection"/>
     <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen, projection"/>
+
+    <?= $style ?>
 </head>
 <body>
     
@@ -36,5 +38,7 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="static/js/bootstrap.js"></script>
+
+    <?= $script ?>
 </body>
 </html>
