@@ -1,5 +1,15 @@
 <?php
 
+function dbConnect()
+{
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=messagerie;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        return $db;
+    } catch(Exception $e) {
+        die('Error : ' . $e->getMessage());
+    }
+}
+
 function usernameAlreadyExists(string $username) : bool
 {
     $db  = dbConnect();
@@ -51,22 +61,12 @@ function passwordsMatch(string $password, string $confirm) : bool
     return ($password === $confirm);
 }
 
-function dbConnect()
-{
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=messagerie;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        return $db;
-    } catch(Exception $e) {
-        die('Error : ' . $e->getMessage());
-    }
-}
-
 
 
 // Get data :
-$username = $_POST['username'];
-$password = $_POST['password'];
-$confirm  = $_POST['confirm'];
+$username = htmlspecialchars($_POST['username']);
+$password = htmlspecialchars($_POST['password']);
+$confirm  = htmlspecialchars($_POST['confirm']);
 
 // Check :
 $username_valid  = isValid($username, 'username');

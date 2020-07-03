@@ -11,6 +11,12 @@ $style = ob_get_clean();
 ob_start(); 
 ?>
 
+<div class="container">
+    <div class="row">
+        <div id="results" class="col-sm-12 col-md-6 offset-md-3 mt-2" role="alert"></div>
+    </div>
+</div>
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
@@ -30,7 +36,7 @@ ob_start();
                     Show password
                 </label>
             </div>
-            <input type="submit" class="fadeIn fourth" value="Log In">
+            <input type="submit" id="submit" class="fadeIn fourth" value="Log In">
         </form>
 
         <!-- Link to register -->
@@ -54,6 +60,37 @@ ob_start(); ?>
             x.type = "password";
         }
     } 
+
+    $(document).ready(function(){
+ 
+        $("#submit").click(function(e){
+            e.preventDefault();
+
+            $.post(
+                'model/user-login.php',
+                {
+                    username : $("#username").val(),
+                    password : $("#password").val()
+                },
+
+                function(data) {
+                    if (data == 'success') {
+                        //window.location.href = '/messagerie/?action=home';
+                        alert(data);
+                    } else {
+                        content = 'Username or password is not valid.'
+                        content += '<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+                        content += '<span aria-hidden="true">&times;</span>';
+                        content += '</button>';
+                        $("#results").html(content);
+                        $("#results").addClass('alert alert-danger alert-dismissible fade show');
+                    }
+                },
+                'text'
+            );
+        });
+
+    });
 </script>
 <?php 
 $script = ob_get_clean();
