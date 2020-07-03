@@ -13,6 +13,18 @@ require('controller/controller.php');
 if (isset($_GET['action'])) {
 	
 	switch ($_GET['action']) {
+		case 'login': login();
+		break;
+
+		case 'logout': logout();
+		break;
+
+		case 'register': register();
+		break;
+
+		case 'admin': admin();
+		break;
+
 		case 'home': home();
 		break;
 		
@@ -22,5 +34,5 @@ if (isset($_GET['action'])) {
 
 } else {
 	// Default page :
-	home();
+	login();
 }
