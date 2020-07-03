@@ -13,8 +13,6 @@ ob_start();
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-        <!-- Tabs Titles -->
-
         <!-- Icon -->
         <div class="fadeIn first">
             <img src="static/img/logos/favicon.ico" id="icon" alt="User Icon" />
@@ -53,6 +51,34 @@ ob_start(); ?>
             y.type = "password";
         }
     } 
+
+    $(document).ready(function(){
+ 
+        $("#submit").click(function(e){
+            e.preventDefault();
+
+            $.post(
+                'model/user-register.php',
+                {
+                    username : $("#username").val(),
+                    password : $("#password").val(),
+                    confirm : $("#confirm-password").val()
+                },
+
+                function(data) {
+                    if (data == 'Success') {
+                        window.location.href = '/messagerie/?action=home';
+                    } else {
+                        $("#results").html("<p>Identifiant ou mot de passe incorrect.</p>");
+                        $("#results").addClass('card-panel white-text text-darken-2 red');
+                    }
+                },
+                'text'
+            );
+        });
+
+    });
+
 </script>
 <?php 
 $script = ob_get_clean();
