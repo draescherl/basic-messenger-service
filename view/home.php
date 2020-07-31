@@ -6,7 +6,7 @@ $title = 'Accueil';
 <div class="container-fluid">
     <div class="row">
         <!-- left element -->
-        <div class="card" style="width: 15%;">
+        <div class="card" style="width: 15%; min-height: 100vh;">
             <!-- title of the left element -->
             <div class="card-header">
                 Home
@@ -18,7 +18,7 @@ $title = 'Accueil';
                     <span><b>Username</b></span> <!-- !!!!!!!!!!!! We need to put the var username here !!!!!!! -->
                 </div>
                 <hr>
-                <div>
+                <div> <!-- style="margin-bottom: 300%; -->
                     <img src="static/img/trueno.jpg" class="rounded-circle mr-3" style="max-width: 70px; border:1px solid black;">
                     <span><b>Username 2</b></span> <!-- !!!!!!!!!!!! We need to put the var username here !!!!!!! -->
                 </div>
@@ -42,6 +42,9 @@ $title = 'Accueil';
                 <div class="d-flex justify-content-end mb-2">
                     <div class="border rounded-pill sent-message p-2">Big oof</div>
                 </div>
+            </div>
+            <div class="input-group mx-auto mb-2" style="width: 80%;">
+                <input type="text" class="form-control border rounded-pill" placeholder="Message" style="background-color: #f1f0f0; color: black;">  <!-- aria-label="Username" aria-describedby="basic-addon1" -->
             </div>
         </div>
     </div>
