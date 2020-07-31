@@ -1,6 +1,6 @@
 <?php
 
-include 'model/utils.php';
+include 'utils.php';
 
 function authorizeLogin(string $username, string $password) : bool
 {
