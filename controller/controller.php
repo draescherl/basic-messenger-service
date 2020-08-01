@@ -1,8 +1,8 @@
 <?php
 
-// require '../model/get-messages.php';
+require 'model/get-messages.php';
 require 'model/get-users.php';
-// require '../model/insert-messages.php';
+require 'model/insert-message.php';
 
 
 /** 
@@ -43,6 +43,13 @@ function admin()
 function home()
 {
     $users = getUsers($_SESSION['username']);
+
+    if (isset($_GET['to'])) {
+        $senderID   = usernameToID($_SESSION['username']);
+        $receiverID = usernameToID($_GET['to']);
+        $messages   = getMessages($senderID, $receiverID);
+    }
+
     require get_page('home.php');
 }
 

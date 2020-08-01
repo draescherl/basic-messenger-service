@@ -1,6 +1,6 @@
 <?php
 
-include 'utils.php';
+include_once 'utils.php';
 
 function insertMessage(int $senderID, int $receiverID, string $contents, int $deleted=0)
 {

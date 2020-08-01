@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'utils.php';
+include_once 'utils.php';
 
 function authorizeLogin(string $username, string $password) : bool
 {
@@ -23,8 +23,9 @@ function authorizeLogin(string $username, string $password) : bool
 
     // Set useful session variables :
     if ($res) {
-        $_SESSION['role'] = $data['role'];
+        $_SESSION['role']     = $data['role'];
         $_SESSION['username'] = $username;
+        $_SESSION['id']       = $data['id'];
     }
     
     // Disconnect from db and return :

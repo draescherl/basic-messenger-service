@@ -9,3 +9,20 @@ function dbConnect()
         die('Error : ' . $e->getMessage());
     }
 }
+
+function usernameToID(string $username)
+{
+    // Connect to database and gather data
+    $db    = dbConnect();
+    $query = 'SELECT * FROM users WHERE username = :username';
+    $req   = $db->prepare($query);
+    $req->execute(array(
+        'username' => $username
+    ));
+
+    // Get ID :
+    $data = $req->fetch();
+    $ID = $data['id'];
+
+    return $ID;
+}

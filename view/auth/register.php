@@ -73,8 +73,7 @@ ob_start(); ?>
 
                 function(data) {
                     if (data == 'success') {
-                        //window.location.href = '/messagerie/?action=home';
-                        alert(data);
+                        window.location.href = '/messagerie/?action=home';
                     } else {
                         switch (data) {
                             case 'not-match': content = 'Passwords do not match.';

@@ -6,13 +6,3 @@
 .site-content {
 	flex: 1;
 }
-
-.sent-message {
-	background-color: #0084ff;
-	color: #fff;
-}
-
-.received-message {
-	background-color: #f1f0f0;
-	color: rgba(0, 0, 0, 1);
-}

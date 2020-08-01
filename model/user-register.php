@@ -1,6 +1,6 @@
 <?php
 
-include 'utils.php';
+include_once 'utils.php';
 
 function usernameAlreadyExists(string $username) : bool
 {
