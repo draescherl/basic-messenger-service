@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include 'utils.php';
 
 function authorizeLogin(string $username, string $password) : bool
@@ -19,6 +20,14 @@ function authorizeLogin(string $username, string $password) : bool
     // Check if password is correct :
     $data = $req->fetch();
     $res = password_verify($password, $data['password']);
+
+    // Set useful session variables :
+    if ($res) {
+        $_SESSION['role'] = $data['role'];
+        $_SESSION['username'] = $username;
+    }
+    
+    // Disconnect from db and return :
     $req->closeCursor();
     return $res;
 }

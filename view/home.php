@@ -1,7 +1,8 @@
 <?php
 $title = 'Accueil';
+
+ob_start(); 
 ?>
-<?php ob_start(); ?>
 
 <div class="container-fluid">
     <div class="row">
@@ -13,15 +14,13 @@ $title = 'Accueil';
             </div>
             <!-- content of the left element -->
             <div class="card-body">
-                <div class="p-2 rounded-lg bg-secondary text-white"> <!-- selected user using this class -->
-                    <img src="static/img/trueno.jpg" class="rounded-circle mr-3" style="max-width: 70px; border:1px solid black;">
-                    <span><b>Username</b></span> <!-- !!!!!!!!!!!! We need to put the var username here !!!!!!! -->
-                </div>
+                <?php foreach ($users as $user) { ?>
+                    <div class="p-2 rounded-lg bg-secondary text-white">
+                        <img src="static/img/trueno.jpg" class="rounded-circle mr-3" style="max-width: 70px; border:1px solid black;">
+                        <span><b><?= $user ?></b></span>
+                    </div>
                 <hr>
-                <div> <!-- style="margin-bottom: 300%; -->
-                    <img src="static/img/trueno.jpg" class="rounded-circle mr-3" style="max-width: 70px; border:1px solid black;">
-                    <span><b>Username 2</b></span> <!-- !!!!!!!!!!!! We need to put the var username here !!!!!!! -->
-                </div>
+                <?php } ?>
             </div>
         </div>
 
@@ -29,7 +28,7 @@ $title = 'Accueil';
         <div class="card" style="width: 85%;">
             <!-- title of the left element -->
             <div class="card-header">
-                Username <!-- !!!!!!!!!!!! We need to put the var username here !!!!!!! -->
+                <?= $_SESSION['username'] ?>
             </div>
             <!-- content of the left element -->
             <div class="card-body">
@@ -50,5 +49,7 @@ $title = 'Accueil';
     </div>
 </div>
 
-<?php $content = ob_get_clean(); ?>
-<?php require('view/template.php'); ?>
+<?php 
+$content = ob_get_clean(); 
+require('view/template.php'); 
+?>

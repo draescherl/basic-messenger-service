@@ -27,6 +27,12 @@ if (isset($_GET['action'])) {
 
 		case 'home': home();
 		break;
+
+		case '401': error_401();
+		break;
+
+		case '403': error_403();
+		break;
 		
 		default: error_404();
 		break;
