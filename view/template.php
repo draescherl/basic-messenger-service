@@ -15,7 +15,9 @@
     <link href="static/css/bootstrap.css" type="text/css" rel="stylesheet" media="screen, projection"/>
     <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen, projection"/>
 
+    <?php if (isset($style)): ?>
     <?= $style ?>
+    <?php endif ?>
 </head>
 <body>
     
@@ -39,6 +41,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="static/js/bootstrap.js"></script>
 
+    <?php if (isset($style)): ?>
     <?= $script ?>
+    <?php endif ?>
 </body>
 </html>
