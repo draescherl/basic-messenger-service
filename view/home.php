@@ -30,14 +30,13 @@ ob_start();
             <div class="card-body">
                 <?php if (isset($messages)) {
                     foreach ($messages as $message) { ?>
-                        <?php if ($message['senderID'] === $_SESSION['id']): ?>
 
+                        <?php if ($message['senderID'] === $_SESSION['id']): ?>
                         <div class="d-flex justify-content-end mb-2">
                             <div class="border rounded-pill p-2" style="background-color: #0084ff; color: #fff;"> <?= $message['contents'] ?> </div>
                         </div>
 
                         <?php else: ?>
-
                         <div class="d-flex justify-content-start mb-2">
                             <div class="border rounded-pill p-2" style="background-color: #f1f0f0; color: rgba(0, 0, 0, 1);"> <?= $message['contents'] ?> </div>
                         </div>
