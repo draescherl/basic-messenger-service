@@ -41,7 +41,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="static/js/bootstrap.js"></script>
 
-    <?php if (isset($style)): ?>
+    <?php if (isset($script)): ?>
     <?= $script ?>
     <?php endif ?>
 </body>

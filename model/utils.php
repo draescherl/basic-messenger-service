@@ -10,7 +10,7 @@ function dbConnect()
     }
 }
 
-function usernameToID(string $username)
+function usernameToID(string $username) : int
 {
     // Connect to database and gather data
     $db    = dbConnect();
