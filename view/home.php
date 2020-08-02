@@ -46,7 +46,10 @@ ob_start();
                 } ?>
             </div>
             <div class="input-group mx-auto mb-2" style="width: 80%;">
-                <input type="text" class="form-control border rounded-pill" placeholder="Message" style="background-color: #f1f0f0; color: black;">  <!-- aria-label="Username" aria-describedby="basic-addon1" -->
+                <input type="text" class="form-control border" placeholder="Message" style="background-color: #f1f0f0; color: black;">  <!-- aria-label="Username" aria-describedby="basic-addon1" -->
+                <button type="button" class="btn btn-primary ml-1">
+                    Send
+                </button>
             </div>
         </div>
     </div>
