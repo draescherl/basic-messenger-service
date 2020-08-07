@@ -24,8 +24,8 @@ ob_start();
         </div>
 
         <!-- Right part of the page -->
-        <div id="chat-wrapper" class="card" style="width: 85%;">
-            <div id="chat">
+        <div class="card" style="width: 85%;">
+            <div style="overflow:auto;">
                 <div class="card-header" id="sender-username"><?= $_SESSION['username'] ?></div>
                 <div class="card-body">
                     <?php if (isset($messages)) {
@@ -41,8 +41,8 @@ ob_start();
                                 <div class="border rounded-pill p-2" style="background-color: #f1f0f0; color: rgba(0, 0, 0, 1);"> <?= $message['contents'] ?> </div>
                             </div>
 
-                            <?php endif;
-                        }
+                            <?php endif; ?>
+                        <?php }
                     } ?>
                 </div>
                 <div class="input-group mx-auto mb-2" style="width: 80%;">
@@ -82,8 +82,7 @@ ob_start();
                 function(response) {
                     if (response == 'success') {
                         // reload page
-                        let url = '/messagerie/?action=home&to=' + receiver;
-                        $('#chat-wrapper').load(url + ' #chat');
+                        document.location.reload(true);
                     } else {
                         alert('Internal error. Please try again later.');
                     }

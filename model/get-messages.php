@@ -14,5 +14,12 @@ function getMessages(int $senderID, int $receiverID)
     ));
     $messages = $req->fetchAll();
 
-    return $messages;
+    return json_encode($messages);
+}
+
+if (isset($_POST['sender']) && isset($_POST['receiver'])) {
+    $senderID   = usernameToID($_POST['sender']);
+    $receiverID = usernameToID($_POST['receiver']);
+    
+    echo getMessages($senderID, $receiverID); 
 }

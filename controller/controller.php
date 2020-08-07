@@ -50,7 +50,7 @@ function home()
         $messages   = getMessages($senderID, $receiverID);
     }
 
-    require get_page('home.php');
+    require get_page('home2.php');
 }
 
 
