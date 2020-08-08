@@ -1,14 +1,7 @@
 <?php
 
-function dbConnect()
-{
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=messagerie;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        return $db;
-    } catch(Exception $e) {
-        die('Error : ' . $e->getMessage());
-    }
-}
+session_start();
+include_once 'utils.php';
 
 function authorizeLogin(string $username, string $password) : bool
 {
@@ -27,6 +20,15 @@ function authorizeLogin(string $username, string $password) : bool
     // Check if password is correct :
     $data = $req->fetch();
     $res = password_verify($password, $data['password']);
+
+    // Set useful session variables :
+    if ($res) {
+        $_SESSION['role']     = $data['role'];
+        $_SESSION['username'] = $username;
+        $_SESSION['id']       = $data['id'];
+    }
+    
+    // Disconnect from db and return :
     $req->closeCursor();
     return $res;
 }

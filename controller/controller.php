@@ -1,5 +1,9 @@
 <?php
 
+require 'model/get-users.php';
+require 'model/insert-message.php';
+
+
 /** 
  * A function that gets the path to the file given as a parameter by adding the path to the view folder
  * 
@@ -37,10 +41,20 @@ function admin()
 
 function home()
 {
+    $users = getUsers($_SESSION['username']);
     require get_page('home.php');
 }
 
 
+function error_401()
+{
+    require get_page('errors/401.php');
+}
+
+function error_403()
+{
+    require get_page('errors/403.php');
+}
 
 function error_404()
 {

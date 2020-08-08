@@ -75,8 +75,7 @@ ob_start(); ?>
 
                 function(data) {
                     if (data == 'success') {
-                        //window.location.href = '/messagerie/?action=home';
-                        alert(data);
+                        window.location.href = '/messagerie/?action=home';
                     } else {
                         content = 'Username or password is not valid.'
                         content += '<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
