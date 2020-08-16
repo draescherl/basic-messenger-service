@@ -1,6 +1,6 @@
 <style>
+/* Credits to Raj78 for the login page : */
 /* https://bootsnipp.com/snippets/dldxB */
-/* https://bootsnipp.com/tags/login */
 
 /* BASIC */
 html {background-color: #56baed;}

@@ -2,6 +2,11 @@
 // Page title :
 $title = 'Log in';
 
+// If user is already logged in :
+if (isset($_SESSION['username'])) {
+    header('Location: /messagerie/?action=home');
+}
+
 // Custom page style :
 ob_start(); 
 include 'view/auth/login-css.php';
