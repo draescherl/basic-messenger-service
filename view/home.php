@@ -19,7 +19,9 @@ $userID = $_SESSION['id'];
 
         <!-- Left -->
         <div class="col-sm-2 border-right">
-            <h4 class="border-bottom mb-4 mt-2 pb-2 text-center">Conversations</h4>
+            <div class="border-bottom mb-4 mt-2 pb-2 text-center">
+                <h4>Conversations</h4>
+            </div>
             <?php foreach ($users as $user) { ?>
 
             <a href=<?= "'" . "/messagerie/?action=home&to=" . $user . "'" ?> style="text-decoration: none; color: black;">
@@ -34,7 +36,15 @@ $userID = $_SESSION['id'];
 
         <!-- Right -->
         <div class="col-sm-10">
-            <h4 id="sender-username" class="border-bottom mb-4 mt-2 pb-2"><?= $_SESSION['username'] ?></h4>
+            <div class="row border-bottom mb-4 mt-2 pb-2">
+                <div class="col-sm-10">
+                    <h4 id="sender-username" class="pl-2"><?= $_SESSION['username'] ?></h4>
+                </div>
+                
+                <div class="col-sm-2 text-center">
+                    <a href="/messagerie/?action=profile" class="btn btn-secondary"> My profile </a>
+                </div>
+            </div>
             
             <div id="messages" style="height:82vh; overflow:auto;">
             </div>
