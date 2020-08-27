@@ -16,7 +16,7 @@ function get_page(string $page_name = "") : string
 }
 
 
-
+// Auth pages :
 function login()
 {
     require get_page('auth/login.php');
@@ -34,6 +34,7 @@ function register()
 
 
 
+// Main pages :
 function admin()
 {
     require get_page('admin.php');
@@ -45,7 +46,14 @@ function home()
     require get_page('home.php');
 }
 
+function profile()
+{
+    require get_page('profile.php');
+}
 
+
+
+// Error pages :
 function error_401()
 {
     require get_page('errors/401.php');

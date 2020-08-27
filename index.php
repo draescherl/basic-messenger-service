@@ -28,6 +28,9 @@ if (isset($_GET['action'])) {
 		case 'home': home();
 		break;
 
+		case 'profile': profile();
+		break;
+
 		case '401': error_401();
 		break;
 

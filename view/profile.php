@@ -1,5 +1,5 @@
 <?php
-$title = 'Admin page';
+$title = $_SESSION['username'] . '\'s profile';
 ob_start(); ?>
 
 <style></style>
